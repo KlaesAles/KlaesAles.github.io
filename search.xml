@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>7-1 整数分解为若干项之和</title>
-    <url>/2022/11/21/7-1%20%E6%95%B4%E6%95%B0%E5%88%86%E8%A7%A3%E4%B8%BA%E8%8B%A5%E5%B9%B2%E9%A1%B9%E4%B9%8B%E5%92%8C/</url>
-    <content><![CDATA[<p>将一个正整数N分解成几个正整数相加，可以有多种分解方法，例如7=6+1，7=5+2，7=5+1+1，…。编程求出正整数N的所有整数分解式子。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含一个测试用例，即正整数N (0&lt;&lt;&lt;N≤\le≤30)。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>按递增顺序输出N的所有整数分解式子。递增顺序是指：对于两个分解序列N1​={n1​,n2​,⋯}和N2​={m1​,m2​,⋯}，若存在i使得n1​=m1​,⋯,ni​=mi​，但是ni+1​&lt;mi+1​,则N1​序列必定在N2​序列之前输出。每个式子由小到大相加，式子间用分号隔开，且每输出4个式子后换行</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>7</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>7=1+1+1+1+1+1+1;7=1+1+1+1+1+2;7=1+1+1+1+3;7=1+1+1+2+2
-7=1+1+1+4;7=1+1+2+3;7=1+1+5;7=1+2+2+2
-7=1+2+4;7=1+3+3;7=1+6;7=2+2+3
-7=2+5;7=3+4;7=7</code></pre><hr>
-<h3 id="题解思路"><a href="#题解思路" class="headerlink" title="题解思路"></a>题解思路</h3><p><em>（字丑见谅）</em><br><img src="https://picture-1300473691.cos.ap-shanghai.myqcloud.com/picture/2022/11/7-1-1.jpg" alt=""><br><img src="https://picture-1300473691.cos.ap-shanghai.myqcloud.com/picture/2022/11/7-1-2.jpg" alt=""><br><img src="https://picture-1300473691.cos.ap-shanghai.myqcloud.com/picture/2022/11/7-1-3.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>PTA</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>仅是随想</title>
     <url>/2022/11/10/%E4%BB%85%E6%98%AF%E9%9A%8F%E6%83%B3/</url>
     <content><![CDATA[<p>分享一首很喜欢的歌的歌词</p>
