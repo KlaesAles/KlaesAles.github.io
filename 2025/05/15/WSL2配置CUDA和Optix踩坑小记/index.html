@@ -22,20 +22,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="分享一首很喜欢的歌的歌词 比起原版《蓝二乘》的翻译，Rachie这一版的英文翻唱和翻译更能够打动我 也许是在一些地方有所共鸣吧">
+  <meta name="description" content="折腾半天才在WSL2上配置好CUDA和Optix，由于互联网上相关资料比较零碎分散，因此在此将个人的踩坑经历草草记录一下，希望能有所帮助。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仅是随想">
-<meta property="og:url" content="http://yoursite.com/2022/11/10/%E4%BB%85%E6%98%AF%E9%9A%8F%E6%83%B3/index.html">
+<meta property="og:title" content="WSL2配置CUDA和Optix踩坑小记">
+<meta property="og:url" content="http://yoursite.com/2025/05/15/WSL2%E9%85%8D%E7%BD%AECUDA%E5%92%8COptix%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Klaes的雨夜">
-<meta property="og:description" content="分享一首很喜欢的歌的歌词 比起原版《蓝二乘》的翻译，Rachie这一版的英文翻唱和翻译更能够打动我 也许是在一些地方有所共鸣吧">
+<meta property="og:description" content="折腾半天才在WSL2上配置好CUDA和Optix，由于互联网上相关资料比较零碎分散，因此在此将个人的踩坑经历草草记录一下，希望能有所帮助。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-10T11:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-18T15:24:08.408Z">
+<meta property="article:published_time" content="2025-05-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-15T09:19:24.306Z">
 <meta property="article:author" content="Klaes">
-<meta property="article:tag" content="杂谈">
+<meta property="article:tag" content="图形学">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2022/11/10/%E4%BB%85%E6%98%AF%E9%9A%8F%E6%83%B3/">
+<link rel="canonical" href="http://yoursite.com/2025/05/15/WSL2%E9%85%8D%E7%BD%AECUDA%E5%92%8COptix%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -47,7 +48,7 @@
   };
 </script>
 
-  <title>仅是随想 | Klaes的雨夜</title>
+  <title>WSL2配置CUDA和Optix踩坑小记 | Klaes的雨夜</title>
   
 
 
@@ -197,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/11/10/%E4%BB%85%E6%98%AF%E9%9A%8F%E6%83%B3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/05/15/WSL2%E9%85%8D%E7%BD%AECUDA%E5%92%8COptix%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/tx.png">
@@ -210,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          仅是随想
+          WSL2配置CUDA和Optix踩坑小记
         </h1>
 
         <div class="post-meta">
@@ -219,23 +220,17 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-11-10 19:00:00" itemprop="dateCreated datePublished" datetime="2022-11-10T19:00:00+08:00">2022-11-10</time>
+              <time title="创建时间：2025-05-15 00:00:00 / 修改时间：17:19:24" itemprop="dateCreated datePublished" datetime="2025-05-15T00:00:00+08:00">2025-05-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 23:24:08" itemprop="dateModified" datetime="2023-05-18T23:24:08+08:00">2023-05-18</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a>
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
                 </span>
             </span>
 
@@ -257,19 +252,89 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>分享一首很喜欢的歌的歌词</p>
-<p>比起原版《蓝二乘》的翻译，Rachie这一版的英文翻唱和翻译更能够打动我</p>
-<p>也许是在一些地方有所共鸣吧</p>
+        <hr>
+<p>折腾半天才在WSL2上配置好CUDA和Optix，由于互联网上相关资料比较零碎分散，因此在此将个人的踩坑经历草草记录一下，希望能有所帮助。</p>
 <a id="more"></a>
 
 <hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1873030410&auto=1&height=66"></iframe>
-
-<blockquote>
-<p>These days that never change，laying in the bule of a deep bule indigo<br> 在这些一如既往的日子里<br> Below a fading sky<br> 我躺在深靛蓝色逐渐消失的天空之下<br> I heard the same today，the thundering applause that as always never came<br> 今天也  那雷鸣般的掌声一如既往地没有出现<br> The song i sang as empty as the life i waste<br> 因为我所唱的歌和我浪费的生命一样空虚<br> So things would never change<br> 所以这些日子也不会有任何改变<br> I wrote inside my notebook，a fan off fairytale<br> 我在笔记本里写下<br> The starring role you played<br> 以你为主角的童话<br> This month is empty too，i am cut off from the world，society，all the news<br> 这个月也独自一人  与这个世界、社会、所有事都断绝了联系<br> My life slowly drips away，like the ink i write in<br> 我的人生也像墨水一样缓慢的滴落<br> As i have gotten older，this dream from my younger by gone years，it slowly starts to fade…<br> 当我一年一年从年轻到成熟，梦想也开始慢慢消失…<br> And all i can do is wait<br> 可是就算是这样我也只能坐以待毙<br> When i，when i look up and see the clouds above<br> 当我 我抬头看向高空的云<br> They all just，just pass me by and disappear<br> 它们都  都只是路过我就消失了<br> The night sky full of petals dancing in the wind<br> 夜空中满是乘着风的飞花<br> So much so it almost feels like a dream<br> 那样的景色简直宛如梦境<br> Like the way i am losing sight of you it seems<br> 就像我在一点点看不见你一样<br> My eyes，they point straight  down，<br> 我低下视线看着下方<br> Realising now that life is nothing but one trade off after the next<br> 意识到现实已经空无一物但我还在一次一次的权衡<br> I dont believe in fate，or love or life or things they play on the radio<br> 我才不相信命运啊  或是广播中的所谓的爱、生命或任何<br> There isnt any use for things that cant be sold<br> 无人买账的话也只不过是没用的废物罢了<br> The now i so wanted，i threw in the trash bin，and watching it all slowly fade away…<br> 现在我想要  只想要把它们扔进垃圾桶  想要看着它一点点消失…<br> I am lying still here in wait<br> 我依然躺在那里等待着<br> Just now，just now i saw a dis tant image of you far out of sight when i had closed my eyes<br> 现在  就现在我闭上眼睛时  远远地看见你的身影<br> My notebook filled with flowers dancing in the night<br> 夜晚  我的笔记本里装满了飞舞的花<br> Like the one i hold inside my eyes<br> 就像我眼中的景色那样<br> Life is just one trade off after another<br> 生活只是一个又一个的交易<br> Something that i learnt quick as i got older<br> 这种事我长大后很快就明白了啊<br> Elma，its been you yknow<br> elma  你明白吗<br> The music ive been listening thats kept me going<br> 就是这样的音乐让我一直一直前进的啊<br> Two verses left，not even worth mentioning<br> 这首歌只有最后两段了  但是没关系<br> Since life is priced as<br> 毕竟生命也就与<br> How tragically the storyline ends<br> 悲惨的故事结局等价<br> Just then，just then，i saw your picture in my mind<br> 就在那时  就在那时  我的脑海中浮现你的样子<br> Oh despite，despite the blue that blurs your smile<br> 尽管  尽管蓝色模糊了你的笑容<br> Those petals dancing on the wind across the sky<br> 飞花乘着风穿越了天空<br> As the indigo blue fills my eyes<br> 而那靛蓝色充满了我的眼睛<br> Cause i，cause i…<br> 因为我  因为我啊…<br> I thought i saw you dancinf in the distant sky<br> 我看见你在遥远的天空中<br> Carried by the wind and out of sight<br> 乘着风  一点一点消失了</p>
-</blockquote>
+<p><strong>环境：</strong></p>
+<ul>
+<li>Win11 WSL2<ul>
+<li>Ubuntu 20.04</li>
+</ul>
+</li>
+<li>RTX3060 Laptop<ul>
+<li>Studio 576.02 2025/4/16</li>
+</ul>
+</li>
+</ul>
 <hr>
-<p> 大学生活真是艰难啊<br> 追寻理想，真的是好事吗<br> 明明放空脑袋，安于现状就能得到安慰<br> 虽然我明白，但还是做不到放弃那个理想<br> 我只是想做自己喜欢的事情度过一生罢了<br> 结果会如何，谁知道呢？</p>
+<h5 id="Part1-安装CUDA"><a href="#Part1-安装CUDA" class="headerlink" title="Part1.安装CUDA"></a>Part1.安装CUDA</h5><p><strong>注意点：</strong></p>
+<ul>
+<li><p>WSL2 使用的是 <strong>Windows 主机上安装的 NVIDIA 显卡驱动</strong>，因此不需要也不应该在 WSL2 内部尝试安装 Linux 版本的 NVIDIA 显示驱动程序。</p>
+<ul>
+<li>访问 NVIDIA 官网下载专门为 <strong>WSL-Ubuntu</strong> (或其他 WSL 发行版) 提供的 CUDA Toolkit 安装包。</li>
+</ul>
+</li>
+<li><p>对于旧版本CUDA的安装，NVIDIA 官网提供的安装方式可能无法安装成功（apt会检测到存在更新版本的CUDA，停止安装）</p>
+<ul>
+<li>只用在apt中搜寻特定版本的<code>cuda-toolkit-xx-x</code>即可，安装前记得检查安装的包内是否存在driver包，防止误安装驱动（应该只有一个driver-devtool包需要安装）</li>
+</ul>
+</li>
+</ul>
+<p><strong>验证</strong>：</p>
+<ul>
+<li><p><code>nvcc --version</code>: 查看在 WSL2 内部安装的 CUDA Toolkit 的版本。</p>
+</li>
+<li><p><code>nvidia-smi</code>: 确认 WSL2 正确访问主机 GPU，并了解主机驱动支持的最高 CUDA 版本。</p>
+</li>
+</ul>
+<hr>
+<h5 id="Part2-安装Optix"><a href="#Part2-安装Optix" class="headerlink" title="Part2.安装Optix"></a>Part2.安装Optix</h5><p>核心问题在于 NVIDIA 尚未将 OptiX 运行时组件完整、无误地集成到通过 Windows 驱动提供给 WSL2 的库中。</p>
+<p>根据NVIDIA 开发者论坛 <a href="https://forums.developer.nvidia.com/t/problem-running-optix-7-6-in-wsl/239355/8" target="_blank" rel="noopener">Problem running OptiX 7.6 in WSL</a> 中的回复，NVIDIA 当时（2024年）并未将 OptiX 完全打包进 WSL2 驱动，而在2025年5月最新的Studio驱动中该问题仍然存在。</p>
+<p>这导致 WSL2 从主机驱动映射过来的 <code>/usr/lib/wsl/lib/libnvoptix.so.1</code> 文件可能存在问题（比如踩坑时发现的 <code>SONAME</code> 错误，文件内嵌的 <code>SONAME</code> 错误地指向了 <code>libnvoptix_loader.so.1</code> 而不是 <code>libnvoptix.so.1</code>），或者缺少其他必要的 OptiX 运行时组件。</p>
+<p>直接结果就是运行 OptiX 程序（如 SDK 中的 <code>optixHello</code>）时，在 <code>optixInit()</code> 阶段因找不到核心库而抛出 <code>OPTIX_ERROR_LIBRARY_NOT_FOUND</code> 错误。</p>
+<p><strong>解决方案</strong></p>
+<p>参照之前的论坛帖子，从一个完整的 <strong>Linux 版 NVIDIA 显示驱动包</strong>中提取出正确的 OptiX 运行时库，并手动放置到 WSL 中正确的位置，让 OptiX 程序能够找到并使用它们。</p>
+<ul>
+<li><p>先正确安装CUDA和Optix，参照Nvidia官网。</p>
+</li>
+<li><p><strong>下载 Linux 版 NVIDIA 显示驱动：</strong> 从 NVIDIA 官网下载一个与你 Windows 主机驱动版本相近（或你希望使用的）的 Linux x86_64 显示驱动程序 (<code>.run</code> 文件)。例如 <code>NVIDIA-Linux-x86_64-575.xx.yy.run</code>。</p>
+<ul>
+<li>我是直接在WSL内 <code>/usr/lib/x86_64-linux-gnu</code> 目录下提取需要的文件，可能是因为之前安装CUDA时误安装的驱动残留（</li>
+<li>也可以使用 <code>./[driver filename].run -x</code> 在 WSL 中运行驱动程序安装程序，这将解压缩驱动程序，但不会安装驱动程序。</li>
+</ul>
+</li>
+<li><p>将 <code>libnvoptix.so.XXX.00</code>、<code>libnvidia-rtcore.so.XXX.00</code> 和 <code>libnvidia-ptxjitcompiler.so.XXX.00</code>复制到 <code>C：/Windows/System32/lxss/lib</code> 中，其中 XXX 是驱动程序版本。</p>
+</li>
+<li><p>将 <code>libnvoptix.so.XX.00</code> 重命名为 <code>libnvoptix.so.1</code>， <code>libnvidia-ptxjitcompiler.so.XXX.00</code> 重命名为 <code>libnvidia-ptxjitcompiler.so.1</code>，<strong>不要</strong>重命名 <code>libnvidia-rtcore.so.XXX.00</code></p>
+</li>
+<li><p>libcuda 和其他库是从 <code>C：/Windows/System32/lxss/lib</code> 传递的，将<code>/usr/local/cuda/bin</code> 添加到 <code>PATH</code> 中访问 NVCC，将 <code>/usr/lib/wsl/lib</code> 添加到 <code>LD_LIBRARY_PATH</code> 中获取 CUDA、OptiX 等。</p>
+<ul>
+<li>请确保<code>LD_LIBRARY_PATH</code>有较高的优先级。</li>
+</ul>
+</li>
+</ul>
+<p><strong>验证</strong>：</p>
+<ul>
+<li>正常安装 OptiX SDK。</li>
+<li>编译 SDK 中的示例程序，测试<code>optixHello</code>能否正常运行。</li>
+</ul>
+<hr>
+<p><strong>残留问题</strong>：</p>
+<ul>
+<li>哪怕这套坑踩下来，我编译的PBRT使用gpu进行场景渲染时，还是会出现错误/用时过长等问题<ul>
+<li>调试后第一次好像是PTX代码问题，第二次好像是场景本身的问题</li>
+<li>懒得继续配环境了，先这样吧，等之后研究源码时再折腾（</li>
+</ul>
+</li>
+<li>不太能确定Optix能够完全正常运行，看论坛帖子报告好像某些地方还是存在问题，但至少<code>optixHello</code>和<code>PBRT</code>是能跑了（</li>
+</ul>
+<hr>
+<p>就先这样吧，实在没有时间写得非常详细，要做的事情还有好多……</p>
+<p>总之也是写了这博客的第一篇技术类文章了，虽然完全不技术，感谢Gemin的帮助（</p>
+<p>也想吐槽自己又写笔记又写一路楼又写日记又写博客…要写的东西太多了啊喂</p>
+<p>唉</p>
 
     </div>
 
@@ -295,7 +360,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"><i class="fa fa-tag"></i> 杂谈</a>
+              <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 图形学</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           </div>
 
         
@@ -304,13 +370,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/30/%E5%A4%8F%E6%97%A5%E9%9A%8F%E8%AE%B0/" rel="prev" title="夏日随记">
-      <i class="fa fa-chevron-left"></i> 夏日随记
+    <a href="/2025/04/12/%E5%96%82%E5%96%82/" rel="prev" title="喂喂">
+      <i class="fa fa-chevron-left"></i> 喂喂
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/05/18/Restart/" rel="next" title="Restart">
-      Restart <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -370,6 +433,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Part1-安装CUDA"><span class="nav-number">1.</span> <span class="nav-text">Part1.安装CUDA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Part2-安装Optix"><span class="nav-number">2.</span> <span class="nav-text">Part2.安装Optix</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
